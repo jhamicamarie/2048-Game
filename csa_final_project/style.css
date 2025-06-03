@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background: #faf8ef;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+#grid-container {
+  position: relative;
+  width: calc(4 * 75px + 5 * 5px);
+  height: calc(4 * 75px + 5 * 5px);
+  margin: auto;
+  background-color: #bbada0;
+  border-radius: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.tile {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  transition: top 0.1s ease, left 0.1s ease;
+}
+
+
+.tile[data-value="2"]    { background: #eee4da; color: #776e65; }
+.tile[data-value="4"]    { background: #ede0c8; color: #776e65; }
+.tile[data-value="8"]    { background: #f2b179; color: #f9f6f2; }
+.tile[data-value="16"]   { background: #f59563; color: #f9f6f2; }
+.tile[data-value="32"]   { background: #f67c5f; color: #f9f6f2; }
+.tile[data-value="64"]   { background: #f65e3b; color: #f9f6f2; }
+.tile[data-value="128"]  { background: #edcf72; color: #f9f6f2; }
+.tile[data-value="256"]  { background: #edcc61; color: #f9f6f2; }
+.tile[data-value="512"]  { background: #edc850; color: #f9f6f2; }
+.tile[data-value="1024"] { background: #edc53f; color: #f9f6f2; }
+.tile[data-value="2048"] { background: #edc22e; color: #f9f6f2; }
+
+.new-tile {
+  animation: pop 0.2s ease;
+}
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+#score {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+#restart-btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  background: #8f7a66;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#restart-btn:hover {
+  background: #a48d78;
+}
+
+#win-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  font-size: 2em;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+}
+
+#win-message.show {
+  display: block;
+}
+
+#game-over-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  font-size: 2em;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+}
+
+#game-over-message.show {
+  display: block;
+}
+
